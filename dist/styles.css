@@ -1,0 +1,145 @@
+:root {
+    --color-primary: #edfaff;
+    --color-primary-light: #bfd6df;
+    --color-primary-dark: #b9c9d5;
+    --color-primary-highlight: #e9d6e7;
+    --color-secondary: #f6ffff;
+    --color-secondary-light: #e8e1e8;
+    --color-secondary-dark: #e7eef1;
+    --color-secondary-highlight: #f1e2e7;
+    --color-page-background: #c8d9e4;
+    --color-white: #626262;
+    --font-family: math, sans-serif;
+    --heading-size: 1.4rem;
+    --subheading-size: 1.2rem;
+    --text-size: 1rem;
+    --small-text-size: 0.8rem;
+    --font-base-color: #555555;
+    --window-margin: 8px;
+    --border-radius: 2px;
+}
+
+body {
+    background: linear-gradient(1deg, #dddddd 0%, #25252614 100%);
+    color: var(--font-base-color);
+    font-family: var(--font-family);
+    font-size: var(--text-size);
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+    margin: 0;
+}
+
+h1 {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #989898;
+}
+
+#daffodil {
+    display: grid;
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    overflow-x: scroll;
+}
+
+#nav-bar {
+    height: fit-content;
+    width: fit-content;
+    left: 0dvw;
+    bottom: 0dvh;
+    padding: var(--window-margin);
+    position: fixed;
+    margin-top: auto;
+    z-index: 10;
+}
+
+button {
+    border: 1px solid #dadada;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+    background: transparent;
+    margin: var(--window-margin);
+    padding: var(--window-margin);
+}
+
+.image img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.image {
+    padding: calc(3 * var(--window-margin));
+    display: grid;
+    grid-template: "main" 1fr / 1fr;
+    width: 250px;
+    height: 250px;
+    justify-items: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image:hover img {
+    transform: scale(1.05);
+}
+
+.image.augmented {
+    width: 80dvw;
+    position: fixed !important;
+    height: 80dvh;
+    top: 0dvh !important;
+    left: 10dvw !important;
+    z-index: 10;
+}
+
+.image.augmented img {
+    max-width: 80dvw;
+    max-height: 80dvh;
+}
+
+img {
+    grid-area: main;
+    width: auto;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 1px 9px 14px 0px #130f0fb3;
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out, max-width 0.3s ease-in-out, max-height 0.3s ease-in-out; 
+    z-index: 2;
+}
+
+.image-menu-container {
+    display: none;
+    border: 1px solid #dadada;
+    border-radius: 0px 0px 20px 20px;
+    left: 0;
+    width: 100%;
+    transition: transform 0.2s;
+    transform: translateY(100%);
+    align-self: flex-end;
+    height: fit-content;
+    box-sizing: border-box;
+    padding: var(--window-margin);
+    pointer-events: none;
+    z-index: 0;
+    grid-area: main;
+}
+
+.image-menu-container.active {
+    transform: translateY(100%);
+    pointer-events: auto;
+
+}
+
+@media only screen and (min-width: 500px) {
+}
+
+
+@media only screen and (max-height: 448px) {   
+}
+
+
+@media only screen and (max-width: 745px) {
+}
+

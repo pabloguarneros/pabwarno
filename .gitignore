@@ -1,0 +1,11 @@
+data
+data/*
+node_modules/
+.npm
+.env
+.cache
+publish.sh
+.DS_Store
+.testing_server
+venv/
+.vscode/
